@@ -3,6 +3,7 @@
 Contains the class DBStorage
 """
 
+
 import models
 from models.amenity import Amenity
 from models.base_model import BaseModel, Base
@@ -94,8 +95,8 @@ class DBStorage:
         if not cls:
             count = 0
             for claass in all_class:
-                count += len(models.storage.all(cls).values())
-            else:
-                count = len(models.storage.all(cls).values())
+                count += len(models.storage.all(claass).values())
+        else:
+            count = len(models.storage.all(cls).values())
 
         return count

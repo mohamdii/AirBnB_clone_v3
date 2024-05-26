@@ -82,14 +82,17 @@ class FileStorage:
    
 
     def count(self, cls=None):
+        """
+        count the number of objects in storage
+        """
         all_class = classes.values()
 
         if not cls:
             count = 0
-            for claass in all_class:
-                count += len(models.storage.all(cls).values())
-            else:
-                count = len(models.storage.all(cls).values())
+            for claas in all_class:
+                count += len(models.storage.all(claas).values())
+        else:
+            count = len(models.storage.all(cls).values())
 
         return count
     
